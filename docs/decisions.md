@@ -10,3 +10,5 @@ One entry per key decision: what we chose, what else we considered, and why. Thi
 | 2026-10-09 | Split: all 10,015 photos, by `lesion_id`, 70/15/15 | Image-level split; one photo per lesion | No leakage, keeps the 11% melanoma share, matches the proposal |
 | 2026-10-09 | Task: binary only (melanoma vs. rest) | Also the 7-class problem | Time; 7-class is future work |
 | 2026-10-09 | Trust score: predictive entropy | Mutual information; max softmax % | Entropy already includes MI; MI is reported separately for analysis |
+| 2026-10-09 | Resize all photos to 224 once, cache as one array | Decode + resize JPEGs every epoch | Loading from the network disk was slow; caching makes every epoch and all 5 ensemble runs faster. Photos squashed to 224×224 (not cropped) so the whole lesion stays in view |
+| 2026-10-09 | Drop Kaggle's duplicate lowercase image folders | Keep both | The Kaggle zip holds every photo twice; the 10,015 originals match the metadata exactly |
