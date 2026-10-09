@@ -1,0 +1,43 @@
+# Shared config for every training run (baseline = seed 0, ensemble = seeds 1-4).
+# Usage: python src/train.py --config configs/base.yaml --seed 3
+# Values follow docs/build-plan.md. Change one only if validation says so, and log why in docs/decisions.md.
+
+data:
+  root: data/ham10000          # where the Kaggle download is unpacked (not in git)
+  split_file: data/split.csv   # saved lesion_id split, shared by all runs
+  split: [0.70, 0.15, 0.15]    # train / val / test, by lesion_id, ~11% melanoma in each
+  split_seed: 42               # fixed so every run uses the same split
+  image_size: 224              # EfficientNet-B0 native input size
+  num_workers: 4
+
+augment:                       # train only
+  hflip: true
+  vflip: true
+  rotation: 20                 # degrees
+  color_jitter: 0.1            # brightness / contrast / saturation
+
+model:
+  name: efficientnet_b0        # ImageNet-pretrained, last layer -> 1 output (melanoma logit)
+  dropout: 0.2                 # EfficientNet-B0 default; also used for MC Dropout
+
+loss:
+  gamma: 2.0                   # focal loss focusing parameter
+  alpha: 0.75                  # weight on melanoma (rare class)
+
+train:
+  optimizer: adamw
+  lr: 1.0e-4                   # small steps to keep ImageNet knowledge
+  batch_size: 32
+  max_epochs: 20
+  early_stop_patience: 5       # stop if val AUC does not improve for 5 epochs
+  select_metric: val_auc       # keep the best epoch on this
+
+uncertainty:
+  mc_passes: 30                # T, MC Dropout forward passes
+  ensemble_seeds: [0, 1, 2, 3, 4]  # M = 5
+
+evaluate:
+  ece_bins: 15
+  cost_miss: 100               # missed melanoma (main setting)
+  cost_miss_sweep: [10, 50, 100]
+  cost_defer: 1                # one dermatologist visit

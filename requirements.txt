@@ -1,0 +1,12 @@
+# PyTorch: on RunPod use the image's preinstalled build (CUDA-matched)
+torch
+torchvision
+
+numpy
+pandas
+scikit-learn
+matplotlib
+pillow
+pyyaml
+tqdm
+kaggle
