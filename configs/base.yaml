@@ -4,7 +4,8 @@
 
 data:
   root: data/ham10000          # where the Kaggle download is unpacked (not in git)
-  split_file: data/split.csv   # saved lesion_id split, shared by all runs
+  split_file: results/split.csv  # saved lesion_id split, shared by all runs (in git)
+  cache_file: data/cache/images_224.npy  # all photos resized once to 224, uint8 (not in git)
   split: [0.70, 0.15, 0.15]    # train / val / test, by lesion_id, ~11% melanoma in each
   split_seed: 42               # fixed so every run uses the same split
   image_size: 224              # EfficientNet-B0 native input size
