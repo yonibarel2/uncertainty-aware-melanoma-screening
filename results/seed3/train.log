@@ -1,0 +1,27 @@
+[seed3] epoch  1  train_loss 0.0352  val_loss 0.0311  val_auc 0.8924  127.2s  *best
+[seed3] epoch  2  train_loss 0.0264  val_loss 0.0275  val_auc 0.9023  12.0s  *best
+[seed3] epoch  3  train_loss 0.0231  val_loss 0.0277  val_auc 0.9072  11.9s  *best
+[seed3] epoch  4  train_loss 0.0201  val_loss 0.0277  val_auc 0.9166  11.8s  *best
+[seed3] epoch  5  train_loss 0.0183  val_loss 0.0334  val_auc 0.9111  12.0s
+[seed3] epoch  6  train_loss 0.0151  val_loss 0.0280  val_auc 0.9206  12.2s  *best
+[seed3] epoch  7  train_loss 0.0134  val_loss 0.0301  val_auc 0.9160  12.0s
+[seed3] epoch  8  train_loss 0.0116  val_loss 0.0363  val_auc 0.9055  12.0s
+[seed3] epoch  9  train_loss 0.0108  val_loss 0.0306  val_auc 0.9233  11.2s  *best
+[seed3] epoch 10  train_loss 0.0109  val_loss 0.0333  val_auc 0.9111  9.1s
+[seed3] epoch 11  train_loss 0.0090  val_loss 0.0370  val_auc 0.9243  9.1s  *best
+[seed3] epoch 12  train_loss 0.0082  val_loss 0.0489  val_auc 0.8987  9.0s
+[seed3] epoch 13  train_loss 0.0075  val_loss 0.0413  val_auc 0.9108  8.9s
+[seed3] epoch 14  train_loss 0.0068  val_loss 0.0457  val_auc 0.9023  6.3s
+[seed3] epoch 15  train_loss 0.0064  val_loss 0.0505  val_auc 0.9073  6.3s
+[seed3] epoch 16  train_loss 0.0060  val_loss 0.0554  val_auc 0.9049  6.3s
+[seed3] early stop: no val AUC gain for 5 epochs
+{
+  "run": "seed3",
+  "seed": 3,
+  "best_epoch": 11,
+  "best_val_auc": 0.9243,
+  "epochs_run": 16,
+  "train_time_sec": 277.7,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "checkpoint": "checkpoints/seed3.pt"
+}

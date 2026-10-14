@@ -1,0 +1,46 @@
+data:
+  root: data/ham10000
+  split_file: results/split.csv
+  cache_file: data/cache/images_224.npy
+  split:
+  - 0.7
+  - 0.15
+  - 0.15
+  split_seed: 42
+  image_size: 224
+  num_workers: 4
+augment:
+  hflip: true
+  vflip: true
+  rotation: 20
+  color_jitter: 0.1
+model:
+  name: efficientnet_b0
+  dropout: 0.2
+loss:
+  gamma: 2.0
+  alpha: 0.75
+train:
+  optimizer: adamw
+  lr: 0.0001
+  batch_size: 32
+  max_epochs: 20
+  early_stop_patience: 5
+  select_metric: val_auc
+uncertainty:
+  mc_passes: 30
+  ensemble_seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+evaluate:
+  ece_bins: 15
+  cost_miss: 100
+  cost_miss_sweep:
+  - 10
+  - 50
+  - 100
+  cost_defer: 1
+seed: 1

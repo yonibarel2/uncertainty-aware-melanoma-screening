@@ -1,0 +1,9 @@
+{
+  "baseline": 2.63,
+  "mc_dropout": 44.17,
+  "ensemble": 8.59,
+  "ensemble_mc": 219.15,
+  "photos": 3015,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "mc_stochdepth": 269.92
+}

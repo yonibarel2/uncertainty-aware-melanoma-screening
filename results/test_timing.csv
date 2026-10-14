@@ -1,0 +1,6 @@
+,models_trained,train_epochs,answers_per_photo,predict_seconds_3015_photos,predict_gpu,train_gpu_minutes
+single_model,1,13.6,1,2.63,NVIDIA GeForce RTX 4090,1.1
+mc_dropout,1,13.6,30,44.17,NVIDIA GeForce RTX 4090,1.1
+ensemble,5,68.0,5,8.59,NVIDIA GeForce RTX 4090,5.3
+ensemble_mc,5,68.0,150,219.15,NVIDIA GeForce RTX 4090,5.3
+mc_stochdepth,1,13.6,30,53.984,NVIDIA GeForce RTX 4090,1.1

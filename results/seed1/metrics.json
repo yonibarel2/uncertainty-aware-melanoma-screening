@@ -1,0 +1,10 @@
+{
+  "run": "seed1",
+  "seed": 1,
+  "best_epoch": 8,
+  "best_val_auc": 0.923,
+  "epochs_run": 13,
+  "train_time_sec": 258.4,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "checkpoint": "checkpoints/seed1.pt"
+}

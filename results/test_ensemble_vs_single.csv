@@ -1,0 +1,10 @@
+cost_miss,rule,ensemble_minus_single,lo,hi
+10,entropy_and_mi,-63.2,-96.0,-31.1
+10,entropy_only,-63.2,-96.0,-31.1
+10,no_defer,30.5,-9.6,75.5
+50,entropy_and_mi,-25.6,-144.3,125.0
+50,entropy_only,-25.6,-144.3,125.0
+50,no_defer,242.4,22.3,485.8
+100,entropy_and_mi,9.3,-131.4,189.3
+100,entropy_only,9.3,-131.4,189.3
+100,no_defer,507.3,62.9,999.3
